@@ -1,47 +1,83 @@
 // Imports.Core
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import Sidebar from './static/components/sidebar'
+// import Sidebar from 'react-sidebar';
+
+// const mql = window.matchMedia(`(min-width: 800px)`);
 
 
 // App
 class App extends Component {
+  // https://github.com/balloob/react-sidebar
+// styles = {
+//   sidebar: {
+//     backgroundColor: 'black'
+//   }
+// };
+//
+//   constructor(props) {
+//     super(props);
+//
+//     this.state = {
+//       sidebarOpen: true  // Toggle
+//     };
+//
+//     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+//   }
+//
+//   onSetSidebarOpen = function(open) {
+//     this.setState({sidebarOpen: open});
+//   };
 
   // TODO:
   // - Fix "Style"
   
   render() {
-    // return (
-		// <title>Health Hub</title>
-		// <meta charset="utf-8" />
-		// <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		// <meta name="description" content="" />
-		// <meta name="keywords" content="" />
-		// <link rel="stylesheet" href="static/css/main.css" />
-    // );
-
+    // let sidebarContent = <b>Sidebar content</b>;
+      
+      // noinspection JSRemoveUnnecessaryParentheses
     return (
           <div>
+            <Helmet>
+                <title>Health Hub</title>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <link rel="stylesheet" href="static/css/main.css" />
+                {/*<script src="static/js/jquery.min.js"/>*/}
+                {/*<script src="static/js/browser.min.js"/>*/}
+                {/*<script src="static/js/breakpoints.min.js"/>*/}
+                {/*<script src="static/js/util.js"/>*/}
+                {/*<script src="static/js/main.js"/>*/}
+            </Helmet>
+
 			{/*Header*/}
 				<header id="header">
 					<a className="logo" href={"index.html"}>HEALTH HUB</a>
 					<nav>
-                        <a href="">Menu</a>
+            <a href={"#menu"}>Menu</a>
 					</nav>
 				</header>
 
+
+
 			{/* Nav */}
-				<nav id="menu">
-					<ul className="links">
-						<li><a href={"index.html"}>Home</a></li>
-						<li><a href="elements.html">Elements</a></li>
-						<li><a href="generic.html">Generic</a></li>
-					</ul>
-				</nav>
+				{/*<nav id="menu">*/}
+					{/*<ul className="links">*/}
+                        {/*/!* TODO: Get these links to work*!/*/}
+                        {/*/!*I don't know what wrapping in curlies does. *!/*/}
+						{/*<li><a href="index.html">Home</a></li>*/}
+						{/*<li><a href="elements.html">Elements</a></li>*/}
+						{/*<li><a href="generic.html">Generic</a></li>*/}
+					{/*</ul>*/}
+				{/*</nav>*/}
+
+
 
 			{/* Banner */}
 				<section id="banner">
-
-                    {/*DEBUGGING*/}
-                    <h1>test1</h1>
 
                     <div className="inner">
 						{/*<h1>Epic</h1>*/}
@@ -99,9 +135,9 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										{/*<a href="" className="icon fa-lock"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-lock"><span className="label">Icon</span></a>*/}
 										{/*<h3>Secure</h3>*/}
-										<a href="" className="icon fa-stethoscope"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>
 										<h3>Clinical</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -110,7 +146,7 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										<a href="" className="icon fa-line-chart"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-line-chart"><span className="label">Icon</span></a>
 										<h3>Analytical</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -119,9 +155,9 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										{/*<a href="" className="icon fa-mobile"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-mobile"><span className="label">Icon</span></a>*/}
 										{/*<h3>Everywhere</h3>*/}
-										<a href="" className="icon fa-bicycle"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-bicycle"><span className="label">Icon</span></a>
 										<h3>Personal</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -131,9 +167,9 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										{/*<a href="" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
 										{/*<h3>Clinical</h3>*/}
-										<a href="" className="icon fa-mobile"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-mobile"><span className="label">Icon</span></a>
 										<h3>Everywhere</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -142,9 +178,9 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										{/*<a href="" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
 										{/*<h3>Clinical</h3>*/}
-										<a href="" className="icon fa-microphone"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-microphone"><span className="label">Icon</span></a>
 										<h3>Conversational</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -153,7 +189,7 @@ class App extends Component {
 							{/*<section>*/}
 								{/*<div className="content">*/}
 									{/*<header>*/}
-										{/*<a href="" className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
 										{/*<h3>Faucibus consequat</h3>*/}
 									{/*</header>*/}
 									{/*<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>*/}
@@ -162,9 +198,9 @@ class App extends Component {
 							<section>
 								<div className="content">
 									<header>
-										{/*<a href="" className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
+										{/*<a href="#" className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
 										{/*<h3>Personal</h3>*/}
-										<a href="" className="icon fa-lock"><span className="label">Icon</span></a>
+										<a href="#" className="icon fa-lock"><span className="label">Icon</span></a>
 										<h3>Secure</h3>
 									</header>
 									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -277,19 +313,19 @@ class App extends Component {
 							<section>
 								<h4>Sem turpis amet semper</h4>
 								<ul className="alt">
-									<li><a href="">Dolor pulvinar sed etiam.</a></li>
-									<li><a href="">Etiam vel lorem sed amet.</a></li>
-									<li><a href="">Felis enim feugiat viverra.</a></li>
-									<li><a href="">Dolor pulvinar magna etiam.</a></li>
+									<li><a href="#">Dolor pulvinar sed etiam.</a></li>
+									<li><a href="#">Etiam vel lorem sed amet.</a></li>
+									<li><a href="#">Felis enim feugiat viverra.</a></li>
+									<li><a href="#">Dolor pulvinar magna etiam.</a></li>
 								</ul>
 							</section>
 							<section>
 								<h4>Magna sed ipsum</h4>
 								<ul className="plain">
-									<li><a href=""><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-									<li><a href=""><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-									<li><a href=""><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-									<li><a href=""><i className="icon fa-github">&nbsp;</i>Github</a></li>
+									<li><a href="#"><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+									<li><a href="#"><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+									<li><a href="#"><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+									<li><a href="#"><i className="icon fa-github">&nbsp;</i>Github</a></li>
 								</ul>
 							</section>
 						</div>
@@ -301,13 +337,9 @@ class App extends Component {
 					{/*<div id="root"></div>*/}
 
 				</footer>
-
-        {/* Scripts */}
-				<script src="static/js/jquery.min.js"/>
-				<script src="static/js/browser.min.js"/>
-				<script src="static/js/breakpoints.min.js"/>
-				<script src="static/js/util.js"/>
-				<script src="static/js/main.js"/>
+         
+        <Sidebar/>
+        
 		</div>
     );
   }
