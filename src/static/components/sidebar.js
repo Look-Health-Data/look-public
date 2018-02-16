@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql, compose } from 'react-apollo';
-import SidebarBase from 'react-sidebar';
+import SidebarBase from '@health-hub/react-sidebar';
 import './sidebar.css'
 
 // import styles from '../css/main.css'
@@ -57,11 +57,14 @@ class AppSidebar extends Component {
       <SidebarBase
         sidebar={sidebarContent}
         // open={this.state.sidebarOpen}
+        sideBarElement={'nav'}
+        sidebarId={'menu'}
         open={visible}
         // onSetOpen={this.onSetSidebarOpen}
         styles={{}}  // Using stylesheet. This Overrides default.
         pullRight={true}
         id={'menu'}
+        externalStylesOnly={true}
         // sidebarClassName={'menu'}
       > </SidebarBase>
     );

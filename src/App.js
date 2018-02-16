@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import gql from 'graphql-tag';
 import { graphql, compose } from 'react-apollo';
-import Sidebar from './static/components/sidebar'
+import { Link } from 'react-router-dom';
+import Sidebar from './static/components/sidebar';
 
 // const mql = window.matchMedia(`(min-width: 800px)`);
 
@@ -80,9 +81,11 @@ class App extends Component {
               {/*<br/>*/}
             {/*See what it feels like</p>*/}
             <br/>
-            <a href="" className="button">Take the tour</a>
-            <span>          </span>
-            <a href="" className="button">Get started</a>
+            {/*<a href="" className="button">Take the tour</a>*/}
+            {/*<span>          </span>*/}
+            {/*<a href="" className="button">Get started</a>*/}
+            <span style={{marginRight: '5rem'}}><Link to="/app" className="button" style={{width: '15%'}}>Take the tour</Link></span>
+            <span style={{marginLeft: '5rem'}}><Link to="/app" className="button" style={{width: '15%'}}>Get started</Link></span>
           </div>
           <video autoPlay={true} loop muted playsInline={true} src="static/media/mov/banner.mp4"/>
         </section>
@@ -127,9 +130,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href="#" className="icon fa-lock"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-lock"><span className="label">Icon</span></a>*/}
                     {/*<h3>Secure</h3>*/}
-                    <a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>
                     <h3>Clinical</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -138,7 +141,7 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    <a href="#" className="icon fa-line-chart"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-line-chart"><span className="label">Icon</span></a>
                     <h3>Analytical</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -147,9 +150,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href="#" className="icon fa-mobile"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-mobile"><span className="label">Icon</span></a>*/}
                     {/*<h3>Everywhere</h3>*/}
-                    <a href="#" className="icon fa-bicycle"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-bicycle"><span className="label">Icon</span></a>
                     <h3>Personal</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -159,9 +162,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
                     {/*<h3>Clinical</h3>*/}
-                    <a href="#" className="icon fa-mobile"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-mobile"><span className="label">Icon</span></a>
                     <h3>Everywhere</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -170,9 +173,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href="#" className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
                     {/*<h3>Clinical</h3>*/}
-                    <a href="#" className="icon fa-microphone"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-microphone"><span className="label">Icon</span></a>
                     <h3>Conversational</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -181,7 +184,7 @@ class App extends Component {
               {/*<section>*/}
                 {/*<div className="content">*/}
                   {/*<header>*/}
-                    {/*<a href="#" className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
                     {/*<h3>Faucibus consequat</h3>*/}
                   {/*</header>*/}
                   {/*<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>*/}
@@ -190,9 +193,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href="#" className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
+                    {/*<a href={"#"} className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
                     {/*<h3>Personal</h3>*/}
-                    <a href="#" className="icon fa-lock"><span className="label">Icon</span></a>
+                    <a href={"#"} className="icon fa-lock"><span className="label">Icon</span></a>
                     <h3>Secure</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -305,19 +308,19 @@ class App extends Component {
               <section>
                 <h4>Sem turpis amet semper</h4>
                 <ul className="alt">
-                  <li><a href="#">Dolor pulvinar sed etiam.</a></li>
-                  <li><a href="#">Etiam vel lorem sed amet.</a></li>
-                  <li><a href="#">Felis enim feugiat viverra.</a></li>
-                  <li><a href="#">Dolor pulvinar magna etiam.</a></li>
+                  <li><a href={"#"}>Dolor pulvinar sed etiam.</a></li>
+                  <li><a href={"#"}>Etiam vel lorem sed amet.</a></li>
+                  <li><a href={"#"}>Felis enim feugiat viverra.</a></li>
+                  <li><a href={"#"}>Dolor pulvinar magna etiam.</a></li>
                 </ul>
               </section>
               <section>
                 <h4>Magna sed ipsum</h4>
                 <ul className="plain">
-                  <li><a href="#"><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                  <li><a href="#"><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                  <li><a href="#"><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                  <li><a href="#"><i className="icon fa-github">&nbsp;</i>Github</a></li>
+                  <li><a href={"#"}><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                  <li><a href={"#"}><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                  <li><a href={"#"}><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                  <li><a href={"#"}><i className="icon fa-github">&nbsp;</i>Github</a></li>
                 </ul>
               </section>
             </div>
@@ -340,19 +343,19 @@ class App extends Component {
 }
 
 // #Queries
-const showTypeQuery = gql`
- query showTypeQuery {
-   show_type @client
- }
-`;
-
-const showTypeMutation = gql`
- mutation showTypeMutation($show_type: String!) {
-   changeShowType(show_type: $show_type) @client {
-     show_type
-   }
- }
-`;
+// const showTypeQuery = gql`
+//  query showTypeQuery {
+//    show_type @client
+//  }
+// `;
+//
+// const showTypeMutation = gql`
+//  mutation showTypeMutation($show_type: String!) {
+//    changeShowType(show_type: $show_type) @client {
+//      show_type
+//    }
+//  }
+// `;
 
 const sideBarToggle = gql`
  mutation sideBarToggle($sidebar_visibility: Boolean!) {
@@ -364,7 +367,7 @@ const sideBarToggle = gql`
 
 // #Export
 export default compose(
-  graphql(showTypeQuery, { name: 'showTypeQuery' }),
-  graphql(showTypeMutation),
+  // graphql(showTypeQuery, { name: 'showTypeQuery' }),
+  // graphql(showTypeMutation),
   graphql(sideBarToggle)
 )(App);
