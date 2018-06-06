@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 import store from './store';
-import App from './App';
+import App from './Site';
 // import registerServiceWorker from './registerServiceWorker';
 
 // - App

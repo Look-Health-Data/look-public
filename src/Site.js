@@ -5,11 +5,12 @@ import gql from 'graphql-tag';
 import { graphql, compose } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import Sidebar from './static/components/sidebar';
+import loadjs from 'loadjs';
 
 // const mql = window.matchMedia(`(min-width: 800px)`);
 
 // App
-class App extends Component {
+class Site extends Component {
   // changeShow = type => {
   //   this.props.mutate({
   //     variables: { show_type: type }
@@ -21,6 +22,17 @@ class App extends Component {
       variables: { sidebar_visibility: !this.props.sidebar_visibility }
     });
   };
+  
+  componentWillMount() {
+    loadjs('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', () => {
+      loadjs('/static/js/browser.min.js');
+      loadjs('/static/js/breakpoints.min.js', () => {
+        loadjs('/static/js/util.js');
+        loadjs('/static/js/main.js');
+      });
+      loadjs('//www.socialintents.com/api/socialintents.1.3.js#2c9fa56361a823200161a9a0d2de005b');
+    });
+  }
   
   render() {
     // const { showTypeQuery, httpQuery } = this.props;
@@ -35,8 +47,9 @@ class App extends Component {
     // };
     
     // noinspection JSRemoveUnnecessaryParentheses
+    // noinspection HtmlUnknownAnchorTarget
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>Health Hub</title>
           <meta charSet="utf-8" />
@@ -44,6 +57,12 @@ class App extends Component {
           <meta name="description" content="" />
           <meta name="keywords" content="" />
           <link rel="stylesheet" href="static/css/main.css" />
+          {/*<script src="static/js/jquery.min.js" type="text/javascript" />*/}
+          {/*<script src="static/js/browser.min.js" type="text/javascript" />*/}
+          {/*<script src="static/js/breakpoints.min.js" type="text/javascript" />*/}
+          {/*<script src="static/js/util.js" type="text/javascript" />*/}
+          {/*<script src="static/js/main.js" type="text/javascript" />*/}
+          {/*<script src="//www.socialintents.com/api/socialintents.1.3.js#2c9fa56361a823200161a9a0d2de005b" async="async" type="text/javascript"/>*/}
         </Helmet>
 
         {/*Header*/}
@@ -72,7 +91,8 @@ class App extends Component {
         {/* Banner */}
         <section id="banner">
   
-                    <div className="inner">
+          {/*<div>*/}
+          <div style={{opacity: 0.5, zIndex: 2}}>
             {/*<h1>Epic</h1>*/}
             {/*<h1>Finally</h1>*/}
             <h1>At long last</h1>
@@ -84,8 +104,10 @@ class App extends Component {
             {/*<a href="" className="button">Take the tour</a>*/}
             {/*<span>          </span>*/}
             {/*<a href="" className="button">Get started</a>*/}
-            <span style={{marginRight: '5rem'}}><Link to="/app" className="button" style={{width: '15%'}}>Take the tour</Link></span>
-            <span style={{marginLeft: '5rem'}}><Link to="/app" className="button" style={{width: '15%'}}>Get started</Link></span>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-evenly'}}>
+              <Link to="/home" className="button" style={{width: '150px'}}>Take the tour</Link>
+              <Link to="/home" className="button" style={{width: '150px'}}>Get started</Link>
+            </div>
           </div>
           <video autoPlay={true} loop muted playsInline={true} src="static/media/mov/banner.mp4"/>
         </section>
@@ -130,9 +152,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href={"#"} className="icon fa-lock"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#secure' className="icon fa-lock"><span className="label">Icon</span></a>*/}
                     {/*<h3>Secure</h3>*/}
-                    <a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>
+                    <a href='#clinical' role='button' className="icon fa-stethoscope"><span className="label">Icon</span></a>
                     <h3>Clinical</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -141,7 +163,7 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    <a href={"#"} className="icon fa-line-chart"><span className="label">Icon</span></a>
+                    <a href='#analytical' className="icon fa-line-chart"><span className="label">Icon</span></a>
                     <h3>Analytical</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -150,9 +172,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href={"#"} className="icon fa-mobile"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#everywhere' className="icon fa-mobile"><span className="label">Icon</span></a>*/}
                     {/*<h3>Everywhere</h3>*/}
-                    <a href={"#"} className="icon fa-bicycle"><span className="label">Icon</span></a>
+                    <a href='#personal' className="icon fa-bicycle"><span className="label">Icon</span></a>
                     <h3>Personal</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -162,9 +184,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#clinical' className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
                     {/*<h3>Clinical</h3>*/}
-                    <a href={"#"} className="icon fa-mobile"><span className="label">Icon</span></a>
+                    <a href='#everywhere' className="icon fa-mobile"><span className="label">Icon</span></a>
                     <h3>Everywhere</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -173,9 +195,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href={"#"} className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#clinical' className="icon fa-stethoscope"><span className="label">Icon</span></a>*/}
                     {/*<h3>Clinical</h3>*/}
-                    <a href={"#"} className="icon fa-microphone"><span className="label">Icon</span></a>
+                    <a href='#conversational' className="icon fa-microphone"><span className="label">Icon</span></a>
                     <h3>Conversational</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -184,7 +206,7 @@ class App extends Component {
               {/*<section>*/}
                 {/*<div className="content">*/}
                   {/*<header>*/}
-                    {/*<a href={"#"} className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#blank' className="icon fa-paper-plane-o"><span className="label">Icon</span></a>*/}
                     {/*<h3>Faucibus consequat</h3>*/}
                   {/*</header>*/}
                   {/*<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>*/}
@@ -193,9 +215,9 @@ class App extends Component {
               <section>
                 <div className="content">
                   <header>
-                    {/*<a href={"#"} className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
+                    {/*<a href='#personal' className="icon fa-bicycle"><span className="label">Icon</span></a>*/}
                     {/*<h3>Personal</h3>*/}
-                    <a href={"#"} className="icon fa-lock"><span className="label">Icon</span></a>
+                    <a href='#secure' className="icon fa-lock"><span className="label">Icon</span></a>
                     <h3>Secure</h3>
                   </header>
                   <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -308,19 +330,19 @@ class App extends Component {
               <section>
                 <h4>Sem turpis amet semper</h4>
                 <ul className="alt">
-                  <li><a href={"#"}>Dolor pulvinar sed etiam.</a></li>
-                  <li><a href={"#"}>Etiam vel lorem sed amet.</a></li>
-                  <li><a href={"#"}>Felis enim feugiat viverra.</a></li>
-                  <li><a href={"#"}>Dolor pulvinar magna etiam.</a></li>
+                  <li><a href='#1'>Dolor pulvinar sed etiam.</a></li>
+                  <li><a href='#2'>Etiam vel lorem sed amet.</a></li>
+                  <li><a href='#3'>Felis enim feugiat viverra.</a></li>
+                  <li><a href='#4'>Dolor pulvinar magna etiam.</a></li>
                 </ul>
               </section>
               <section>
                 <h4>Magna sed ipsum</h4>
                 <ul className="plain">
-                  <li><a href={"#"}><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                  <li><a href={"#"}><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                  <li><a href={"#"}><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                  <li><a href={"#"}><i className="icon fa-github">&nbsp;</i>Github</a></li>
+                  <li><a href='#5'><i className="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                  <li><a href='#6'><i className="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                  <li><a href='#7'><i className="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                  <li><a href='#8'><i className="icon fa-github">&nbsp;</i>Github</a></li>
                 </ul>
               </section>
             </div>
@@ -337,7 +359,7 @@ class App extends Component {
         {/*<button onClick={() => this.changeShow('ABOVE_15')}>Above $15</button>*/}
         {/*{testValue}*/}
       
-		  </div>
+		  </React.Fragment>
     );
   }
 }
@@ -370,4 +392,4 @@ export default compose(
   // graphql(showTypeQuery, { name: 'showTypeQuery' }),
   // graphql(showTypeMutation),
   graphql(sideBarToggle)
-)(App);
+)(Site);
